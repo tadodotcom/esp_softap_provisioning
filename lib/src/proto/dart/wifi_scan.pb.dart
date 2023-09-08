@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: wifi_scan.proto
 //
-// @dart = 2.3
+
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
 import 'dart:core' as $core;
@@ -37,7 +37,7 @@ class CmdScanStart extends $pb.GeneratedMessage {
   static $pb.PbList<CmdScanStart> createRepeated() => $pb.PbList<CmdScanStart>();
   @$core.pragma('dart2js:noInline')
   static CmdScanStart getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CmdScanStart>(create);
-  static CmdScanStart _defaultInstance;
+  static CmdScanStart? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get blocking => $_getBF(0);
@@ -94,7 +94,7 @@ class RespScanStart extends $pb.GeneratedMessage {
   static $pb.PbList<RespScanStart> createRepeated() => $pb.PbList<RespScanStart>();
   @$core.pragma('dart2js:noInline')
   static RespScanStart getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RespScanStart>(create);
-  static RespScanStart _defaultInstance;
+  static RespScanStart? _defaultInstance;
 }
 
 class CmdScanStatus extends $pb.GeneratedMessage {
@@ -115,7 +115,7 @@ class CmdScanStatus extends $pb.GeneratedMessage {
   static $pb.PbList<CmdScanStatus> createRepeated() => $pb.PbList<CmdScanStatus>();
   @$core.pragma('dart2js:noInline')
   static CmdScanStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CmdScanStatus>(create);
-  static CmdScanStatus _defaultInstance;
+  static CmdScanStatus? _defaultInstance;
 }
 
 class RespScanStatus extends $pb.GeneratedMessage {
@@ -138,7 +138,7 @@ class RespScanStatus extends $pb.GeneratedMessage {
   static $pb.PbList<RespScanStatus> createRepeated() => $pb.PbList<RespScanStatus>();
   @$core.pragma('dart2js:noInline')
   static RespScanStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RespScanStatus>(create);
-  static RespScanStatus _defaultInstance;
+  static RespScanStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get scanFinished => $_getBF(0);
@@ -179,7 +179,7 @@ class CmdScanResult extends $pb.GeneratedMessage {
   static $pb.PbList<CmdScanResult> createRepeated() => $pb.PbList<CmdScanResult>();
   @$core.pragma('dart2js:noInline')
   static CmdScanResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CmdScanResult>(create);
-  static CmdScanResult _defaultInstance;
+  static CmdScanResult? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get startIndex => $_getIZ(0);
@@ -223,7 +223,7 @@ class WiFiScanResult extends $pb.GeneratedMessage {
   static $pb.PbList<WiFiScanResult> createRepeated() => $pb.PbList<WiFiScanResult>();
   @$core.pragma('dart2js:noInline')
   static WiFiScanResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WiFiScanResult>(create);
-  static WiFiScanResult _defaultInstance;
+  static WiFiScanResult? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get ssid => $_getN(0);
@@ -290,7 +290,7 @@ class RespScanResult extends $pb.GeneratedMessage {
   static $pb.PbList<RespScanResult> createRepeated() => $pb.PbList<RespScanResult>();
   @$core.pragma('dart2js:noInline')
   static RespScanResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RespScanResult>(create);
-  static RespScanResult _defaultInstance;
+  static RespScanResult? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<WiFiScanResult> get entries => $_getList(0);
@@ -342,7 +342,7 @@ class WiFiScanPayload extends $pb.GeneratedMessage {
   static $pb.PbList<WiFiScanPayload> createRepeated() => $pb.PbList<WiFiScanPayload>();
   @$core.pragma('dart2js:noInline')
   static WiFiScanPayload getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WiFiScanPayload>(create);
-  static WiFiScanPayload _defaultInstance;
+  static WiFiScanPayload? _defaultInstance;
 
   WiFiScanPayload_Payload whichPayload() => _WiFiScanPayload_PayloadByTag[$_whichOneof(0)];
   void clearPayload() => clearField($_whichOneof(0));

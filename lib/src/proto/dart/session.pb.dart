@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: session.proto
 //
-// @dart = 2.3
+
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
 import 'dart:core' as $core;
@@ -49,7 +49,7 @@ class SessionData extends $pb.GeneratedMessage {
   static $pb.PbList<SessionData> createRepeated() => $pb.PbList<SessionData>();
   @$core.pragma('dart2js:noInline')
   static SessionData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SessionData>(create);
-  static SessionData _defaultInstance;
+  static SessionData? _defaultInstance;
 
   SessionData_Proto whichProto() => _SessionData_ProtoByTag[$_whichOneof(0)];
   void clearProto() => clearField($_whichOneof(0));

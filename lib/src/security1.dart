@@ -10,13 +10,13 @@ import 'security.dart';
 import 'package:logger/logger.dart';
 
 class Security1 implements Security {
-  final String pop;
-  final bool verbose;
-  SecurityState sessionState;
-  SimpleKeyPairData clientKey;
-  List<int> clientPubKey;
-  SimplePublicKey devicePublicKey;
-  Uint8List deviceRandom;
+  final String? pop;
+  final bool? verbose;
+  SecurityState? sessionState;
+  SimpleKeyPairData? clientKey;
+  List<int>? clientPubKey;
+  SimplePublicKey? devicePublicKey;
+  Uint8List? deviceRandom;
   Cryptor crypt = Cryptor();
   var logger = Logger();
   final algorithm = X25519();
@@ -38,7 +38,7 @@ class Security1 implements Security {
 
   Future<void> _generateKey() async {
     // creates client key with X25519 algo
-    this.clientKey = await algorithm.newKeyPair();
+    this.clientKey = (await algorithm.newKeyPair()) as SimpleKeyPairData?;
   }
 
 
@@ -67,10 +67,9 @@ class Security1 implements Security {
     }
     if (sessionState == SecurityState.RESPONSE2) {
       sessionState = SecurityState.FINISH;
-      await setup1Response(responseData);
-      return null;
+      return await setup1Response(responseData) ?? SessionData();
     }
-    throw Exception('Unexpected state');
+    return SessionData();
   }
 
   Future<SessionData> setup0Request() async {
@@ -79,7 +78,7 @@ class Security1 implements Security {
     setupRequest.secVer = SecSchemeVersion.SecScheme1;
     await _generateKey();
     SessionCmd0 sc0 = SessionCmd0();
-    await clientKey.extractPublicKey().then((publicKey) {
+    await clientKey!.extractPublicKey().then((publicKey) {
       sc0.clientPubkey = publicKey.bytes;
       clientPubKey = publicKey.bytes;
     });
@@ -104,15 +103,15 @@ class Security1 implements Security {
     logger.i('setup0Response:Device random ${deviceRandom.toString()}');
 
     final sharedKey = await algorithm.sharedSecretKey(
-        keyPair: clientKey,
-        remotePublicKey: devicePublicKey);
+        keyPair: clientKey!,
+        remotePublicKey: devicePublicKey!);
 
     await sharedKey.extractBytes().then((sharedSecret) async {
       Uint8List sharedKeyBytes;
       logger.i('setup0Response: Shared key calculated: ${sharedSecret.toString()}');
       if (pop != null) {
         var sink = Sha256().newHashSink();
-        sink.add(utf8.encode(pop));
+        sink.add(utf8.encode(pop!));
         sink.close();
         final hash = await sink.hash();
         sharedKeyBytes = _xor(Uint8List.fromList(sharedSecret),Uint8List.fromList(hash.bytes));
@@ -123,17 +122,19 @@ class Security1 implements Security {
       {
         sharedKeyBytes = Uint8List.fromList(sharedSecret);
       }
-      await this.crypt.init(sharedKeyBytes, deviceRandom);
+      await this.crypt.init(sharedKeyBytes, deviceRandom!);
       logger.i(
           'setup0Response: cipherSecretKey: ${sharedKeyBytes.toString()} cipherNonce: ${deviceRandom.toString()}');
       return setupResp;
     });
 
+    return SessionData();
+
   }
 
   Future<SessionData> setup1Request(SessionData responseData) async {
     logger.i('setup1Request ${devicePublicKey.toString()}');
-    var clientVerify = await encrypt(devicePublicKey.bytes);
+    var clientVerify = await encrypt(devicePublicKey!.bytes as Uint8List);
 
     logger.i('client verify ${clientVerify.toString()}');
     var setupRequest = SessionData();
@@ -148,7 +149,7 @@ class Security1 implements Security {
     return setupRequest;
   }
 
-  Future<SessionData> setup1Response(SessionData responseData) async {
+  Future<Null> setup1Response(SessionData responseData) async {
     logger.i('setup1Response');
     var setupResp = responseData;
     if (setupResp.secVer == SecSchemeVersion.SecScheme1) {

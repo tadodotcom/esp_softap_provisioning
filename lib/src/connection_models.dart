@@ -17,9 +17,9 @@ class ConnectionStatus {
     this.failedReason,
   });
 
-  final WifiConnectionState state;
-  final String ip;
-  final WifiConnectFailedReason failedReason;
+  final WifiConnectionState? state;
+  final String? ip;
+  final WifiConnectFailedReason? failedReason;
 }
 
 class WifiAP {
@@ -30,13 +30,13 @@ class WifiAP {
     this.private = true,
   });
 
-  final String ssid;
-  final int rssi;
-  final bool active;
-  final bool private;
+  final String? ssid;
+  final int? rssi;
+  final bool? active;
+  final bool? private;
 
   int compareTo(WifiAP other) {
-    if (rssi > other.rssi) {
+    if (rssi! > other.rssi!) {
       return -1;
     }
     if (rssi == other.rssi) {
