@@ -12,6 +12,8 @@ Note : These proto files are not automatically compiled during the build process
 
 Compilation requires protoc (Protobuf Compiler) and protoc-c (Protobuf C Compiler) installed. Since the generated files are to remain the same, as long as the proto files are not modified, therefore the generated files are already available under `components/protocomm/proto-c` and `components/protocomm/python` directories, and thus running cmake / make (and installing the Protobuf compilers) is optional.
 
+Compiling requires [protoc](https://grpc.io/docs/protoc-installation/) to be installed. If working with dart, you will also need the [protoc-plugin](https://pub.dev/packages/protoc_plugin).
+
 If using `cmake` follow the below steps. If using `make`, jump to Step 2 directly.
 
 ## Step 1 (Only for cmake)
@@ -26,4 +28,8 @@ cmake ..
 
 ## Step 2
 
-Simply run `make` to generate the respective C and Python files. The newly created files will overwrite those under `components/protocomm/proto-c` and `components/protocomm/python`
+Simply run `make` to generate the respective C and Python files. The newly created files will overwrite those under `components/protocomm/proto-c` and `components/protocomm/python`.
+
+You can also run `make dart_proto` to just generate the `dart` files.
+
+
