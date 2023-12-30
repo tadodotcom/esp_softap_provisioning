@@ -1,36 +1,71 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: wifi_scan.proto
 //
+// @dart = 2.12
 
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'constants.pbenum.dart' as $0;
 import 'wifi_constants.pbenum.dart' as $3;
 import 'wifi_scan.pbenum.dart';
-import 'constants.pbenum.dart' as $0;
 
 export 'wifi_scan.pbenum.dart';
 
 class CmdScanStart extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('CmdScanStart', createEmptyInstance: create)
-    ..aOB(1, 'blocking')
-    ..aOB(2, 'passive')
-    ..a<$core.int>(3, 'groupChannels', $pb.PbFieldType.OU3)
-    ..a<$core.int>(4, 'periodMs', $pb.PbFieldType.OU3)
+  factory CmdScanStart({
+    $core.bool? blocking,
+    $core.bool? passive,
+    $core.int? groupChannels,
+    $core.int? periodMs,
+  }) {
+    final $result = create();
+    if (blocking != null) {
+      $result.blocking = blocking;
+    }
+    if (passive != null) {
+      $result.passive = passive;
+    }
+    if (groupChannels != null) {
+      $result.groupChannels = groupChannels;
+    }
+    if (periodMs != null) {
+      $result.periodMs = periodMs;
+    }
+    return $result;
+  }
+  CmdScanStart._() : super();
+  factory CmdScanStart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CmdScanStart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CmdScanStart', createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'blocking')
+    ..aOB(2, _omitFieldNames ? '' : 'passive')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'groupChannels', $pb.PbFieldType.OU3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'periodMs', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
-  CmdScanStart._() : super();
-  factory CmdScanStart() => create();
-  factory CmdScanStart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CmdScanStart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   CmdScanStart clone() => CmdScanStart()..mergeFromMessage(this);
-  CmdScanStart copyWith(void Function(CmdScanStart) updates) => super.copyWith((message) => updates(message as CmdScanStart));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CmdScanStart copyWith(void Function(CmdScanStart) updates) => super.copyWith((message) => updates(message as CmdScanStart)) as CmdScanStart;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CmdScanStart create() => CmdScanStart._();
   CmdScanStart createEmptyInstance() => create();
@@ -77,17 +112,28 @@ class CmdScanStart extends $pb.GeneratedMessage {
 }
 
 class RespScanStart extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('RespScanStart', createEmptyInstance: create)
+  factory RespScanStart() => create();
+  RespScanStart._() : super();
+  factory RespScanStart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RespScanStart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RespScanStart', createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  RespScanStart._() : super();
-  factory RespScanStart() => create();
-  factory RespScanStart.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RespScanStart.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   RespScanStart clone() => RespScanStart()..mergeFromMessage(this);
-  RespScanStart copyWith(void Function(RespScanStart) updates) => super.copyWith((message) => updates(message as RespScanStart));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RespScanStart copyWith(void Function(RespScanStart) updates) => super.copyWith((message) => updates(message as RespScanStart)) as RespScanStart;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RespScanStart create() => RespScanStart._();
   RespScanStart createEmptyInstance() => create();
@@ -98,17 +144,28 @@ class RespScanStart extends $pb.GeneratedMessage {
 }
 
 class CmdScanStatus extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('CmdScanStatus', createEmptyInstance: create)
+  factory CmdScanStatus() => create();
+  CmdScanStatus._() : super();
+  factory CmdScanStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CmdScanStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CmdScanStatus', createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  CmdScanStatus._() : super();
-  factory CmdScanStatus() => create();
-  factory CmdScanStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CmdScanStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   CmdScanStatus clone() => CmdScanStatus()..mergeFromMessage(this);
-  CmdScanStatus copyWith(void Function(CmdScanStatus) updates) => super.copyWith((message) => updates(message as CmdScanStatus));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CmdScanStatus copyWith(void Function(CmdScanStatus) updates) => super.copyWith((message) => updates(message as CmdScanStatus)) as CmdScanStatus;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CmdScanStatus create() => CmdScanStatus._();
   CmdScanStatus createEmptyInstance() => create();
@@ -119,19 +176,42 @@ class CmdScanStatus extends $pb.GeneratedMessage {
 }
 
 class RespScanStatus extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('RespScanStatus', createEmptyInstance: create)
-    ..aOB(1, 'scanFinished')
-    ..a<$core.int>(2, 'resultCount', $pb.PbFieldType.OU3)
+  factory RespScanStatus({
+    $core.bool? scanFinished,
+    $core.int? resultCount,
+  }) {
+    final $result = create();
+    if (scanFinished != null) {
+      $result.scanFinished = scanFinished;
+    }
+    if (resultCount != null) {
+      $result.resultCount = resultCount;
+    }
+    return $result;
+  }
+  RespScanStatus._() : super();
+  factory RespScanStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RespScanStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RespScanStatus', createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'scanFinished')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'resultCount', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
-  RespScanStatus._() : super();
-  factory RespScanStatus() => create();
-  factory RespScanStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RespScanStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   RespScanStatus clone() => RespScanStatus()..mergeFromMessage(this);
-  RespScanStatus copyWith(void Function(RespScanStatus) updates) => super.copyWith((message) => updates(message as RespScanStatus));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RespScanStatus copyWith(void Function(RespScanStatus) updates) => super.copyWith((message) => updates(message as RespScanStatus)) as RespScanStatus;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RespScanStatus create() => RespScanStatus._();
   RespScanStatus createEmptyInstance() => create();
@@ -160,19 +240,42 @@ class RespScanStatus extends $pb.GeneratedMessage {
 }
 
 class CmdScanResult extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('CmdScanResult', createEmptyInstance: create)
-    ..a<$core.int>(1, 'startIndex', $pb.PbFieldType.OU3)
-    ..a<$core.int>(2, 'count', $pb.PbFieldType.OU3)
+  factory CmdScanResult({
+    $core.int? startIndex,
+    $core.int? count,
+  }) {
+    final $result = create();
+    if (startIndex != null) {
+      $result.startIndex = startIndex;
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    return $result;
+  }
+  CmdScanResult._() : super();
+  factory CmdScanResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CmdScanResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CmdScanResult', createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'startIndex', $pb.PbFieldType.OU3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'count', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
-  CmdScanResult._() : super();
-  factory CmdScanResult() => create();
-  factory CmdScanResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CmdScanResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   CmdScanResult clone() => CmdScanResult()..mergeFromMessage(this);
-  CmdScanResult copyWith(void Function(CmdScanResult) updates) => super.copyWith((message) => updates(message as CmdScanResult));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CmdScanResult copyWith(void Function(CmdScanResult) updates) => super.copyWith((message) => updates(message as CmdScanResult)) as CmdScanResult;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CmdScanResult create() => CmdScanResult._();
   CmdScanResult createEmptyInstance() => create();
@@ -201,22 +304,57 @@ class CmdScanResult extends $pb.GeneratedMessage {
 }
 
 class WiFiScanResult extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WiFiScanResult', createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, 'ssid', $pb.PbFieldType.OY)
-    ..a<$core.int>(2, 'channel', $pb.PbFieldType.OU3)
-    ..a<$core.int>(3, 'rssi', $pb.PbFieldType.O3)
-    ..a<$core.List<$core.int>>(4, 'bssid', $pb.PbFieldType.OY)
-    ..e<$3.WifiAuthMode>(5, 'auth', $pb.PbFieldType.OE, defaultOrMaker: $3.WifiAuthMode.Open, valueOf: $3.WifiAuthMode.valueOf, enumValues: $3.WifiAuthMode.values)
+  factory WiFiScanResult({
+    $core.List<$core.int>? ssid,
+    $core.int? channel,
+    $core.int? rssi,
+    $core.List<$core.int>? bssid,
+    $3.WifiAuthMode? auth,
+  }) {
+    final $result = create();
+    if (ssid != null) {
+      $result.ssid = ssid;
+    }
+    if (channel != null) {
+      $result.channel = channel;
+    }
+    if (rssi != null) {
+      $result.rssi = rssi;
+    }
+    if (bssid != null) {
+      $result.bssid = bssid;
+    }
+    if (auth != null) {
+      $result.auth = auth;
+    }
+    return $result;
+  }
+  WiFiScanResult._() : super();
+  factory WiFiScanResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WiFiScanResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WiFiScanResult', createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'ssid', $pb.PbFieldType.OY)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'channel', $pb.PbFieldType.OU3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'rssi', $pb.PbFieldType.O3)
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'bssid', $pb.PbFieldType.OY)
+    ..e<$3.WifiAuthMode>(5, _omitFieldNames ? '' : 'auth', $pb.PbFieldType.OE, defaultOrMaker: $3.WifiAuthMode.Open, valueOf: $3.WifiAuthMode.valueOf, enumValues: $3.WifiAuthMode.values)
     ..hasRequiredFields = false
   ;
 
-  WiFiScanResult._() : super();
-  factory WiFiScanResult() => create();
-  factory WiFiScanResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory WiFiScanResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WiFiScanResult clone() => WiFiScanResult()..mergeFromMessage(this);
-  WiFiScanResult copyWith(void Function(WiFiScanResult) updates) => super.copyWith((message) => updates(message as WiFiScanResult));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WiFiScanResult copyWith(void Function(WiFiScanResult) updates) => super.copyWith((message) => updates(message as WiFiScanResult)) as WiFiScanResult;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static WiFiScanResult create() => WiFiScanResult._();
   WiFiScanResult createEmptyInstance() => create();
@@ -272,18 +410,37 @@ class WiFiScanResult extends $pb.GeneratedMessage {
 }
 
 class RespScanResult extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('RespScanResult', createEmptyInstance: create)
-    ..pc<WiFiScanResult>(1, 'entries', $pb.PbFieldType.PM, subBuilder: WiFiScanResult.create)
+  factory RespScanResult({
+    $core.Iterable<WiFiScanResult>? entries,
+  }) {
+    final $result = create();
+    if (entries != null) {
+      $result.entries.addAll(entries);
+    }
+    return $result;
+  }
+  RespScanResult._() : super();
+  factory RespScanResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RespScanResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RespScanResult', createEmptyInstance: create)
+    ..pc<WiFiScanResult>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: WiFiScanResult.create)
     ..hasRequiredFields = false
   ;
 
-  RespScanResult._() : super();
-  factory RespScanResult() => create();
-  factory RespScanResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RespScanResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   RespScanResult clone() => RespScanResult()..mergeFromMessage(this);
-  RespScanResult copyWith(void Function(RespScanResult) updates) => super.copyWith((message) => updates(message as RespScanResult));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RespScanResult copyWith(void Function(RespScanResult) updates) => super.copyWith((message) => updates(message as RespScanResult)) as RespScanResult;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RespScanResult create() => RespScanResult._();
   RespScanResult createEmptyInstance() => create();
@@ -307,6 +464,47 @@ enum WiFiScanPayload_Payload {
 }
 
 class WiFiScanPayload extends $pb.GeneratedMessage {
+  factory WiFiScanPayload({
+    WiFiScanMsgType? msg,
+    $0.Status? status,
+    CmdScanStart? cmdScanStart,
+    RespScanStart? respScanStart,
+    CmdScanStatus? cmdScanStatus,
+    RespScanStatus? respScanStatus,
+    CmdScanResult? cmdScanResult,
+    RespScanResult? respScanResult,
+  }) {
+    final $result = create();
+    if (msg != null) {
+      $result.msg = msg;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (cmdScanStart != null) {
+      $result.cmdScanStart = cmdScanStart;
+    }
+    if (respScanStart != null) {
+      $result.respScanStart = respScanStart;
+    }
+    if (cmdScanStatus != null) {
+      $result.cmdScanStatus = cmdScanStatus;
+    }
+    if (respScanStatus != null) {
+      $result.respScanStatus = respScanStatus;
+    }
+    if (cmdScanResult != null) {
+      $result.cmdScanResult = cmdScanResult;
+    }
+    if (respScanResult != null) {
+      $result.respScanResult = respScanResult;
+    }
+    return $result;
+  }
+  WiFiScanPayload._() : super();
+  factory WiFiScanPayload.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WiFiScanPayload.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
   static const $core.Map<$core.int, WiFiScanPayload_Payload> _WiFiScanPayload_PayloadByTag = {
     10 : WiFiScanPayload_Payload.cmdScanStart,
     11 : WiFiScanPayload_Payload.respScanStart,
@@ -316,26 +514,32 @@ class WiFiScanPayload extends $pb.GeneratedMessage {
     15 : WiFiScanPayload_Payload.respScanResult,
     0 : WiFiScanPayload_Payload.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('WiFiScanPayload', createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WiFiScanPayload', createEmptyInstance: create)
     ..oo(0, [10, 11, 12, 13, 14, 15])
-    ..e<WiFiScanMsgType>(1, 'msg', $pb.PbFieldType.OE, defaultOrMaker: WiFiScanMsgType.TypeCmdScanStart, valueOf: WiFiScanMsgType.valueOf, enumValues: WiFiScanMsgType.values)
-    ..e<$0.Status>(2, 'status', $pb.PbFieldType.OE, defaultOrMaker: $0.Status.Success, valueOf: $0.Status.valueOf, enumValues: $0.Status.values)
-    ..aOM<CmdScanStart>(10, 'cmdScanStart', subBuilder: CmdScanStart.create)
-    ..aOM<RespScanStart>(11, 'respScanStart', subBuilder: RespScanStart.create)
-    ..aOM<CmdScanStatus>(12, 'cmdScanStatus', subBuilder: CmdScanStatus.create)
-    ..aOM<RespScanStatus>(13, 'respScanStatus', subBuilder: RespScanStatus.create)
-    ..aOM<CmdScanResult>(14, 'cmdScanResult', subBuilder: CmdScanResult.create)
-    ..aOM<RespScanResult>(15, 'respScanResult', subBuilder: RespScanResult.create)
+    ..e<WiFiScanMsgType>(1, _omitFieldNames ? '' : 'msg', $pb.PbFieldType.OE, defaultOrMaker: WiFiScanMsgType.TypeCmdScanStart, valueOf: WiFiScanMsgType.valueOf, enumValues: WiFiScanMsgType.values)
+    ..e<$0.Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: $0.Status.Success, valueOf: $0.Status.valueOf, enumValues: $0.Status.values)
+    ..aOM<CmdScanStart>(10, _omitFieldNames ? '' : 'cmdScanStart', subBuilder: CmdScanStart.create)
+    ..aOM<RespScanStart>(11, _omitFieldNames ? '' : 'respScanStart', subBuilder: RespScanStart.create)
+    ..aOM<CmdScanStatus>(12, _omitFieldNames ? '' : 'cmdScanStatus', subBuilder: CmdScanStatus.create)
+    ..aOM<RespScanStatus>(13, _omitFieldNames ? '' : 'respScanStatus', subBuilder: RespScanStatus.create)
+    ..aOM<CmdScanResult>(14, _omitFieldNames ? '' : 'cmdScanResult', subBuilder: CmdScanResult.create)
+    ..aOM<RespScanResult>(15, _omitFieldNames ? '' : 'respScanResult', subBuilder: RespScanResult.create)
     ..hasRequiredFields = false
   ;
 
-  WiFiScanPayload._() : super();
-  factory WiFiScanPayload() => create();
-  factory WiFiScanPayload.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory WiFiScanPayload.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   WiFiScanPayload clone() => WiFiScanPayload()..mergeFromMessage(this);
-  WiFiScanPayload copyWith(void Function(WiFiScanPayload) updates) => super.copyWith((message) => updates(message as WiFiScanPayload));
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WiFiScanPayload copyWith(void Function(WiFiScanPayload) updates) => super.copyWith((message) => updates(message as WiFiScanPayload)) as WiFiScanPayload;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static WiFiScanPayload create() => WiFiScanPayload._();
   WiFiScanPayload createEmptyInstance() => create();
@@ -344,7 +548,7 @@ class WiFiScanPayload extends $pb.GeneratedMessage {
   static WiFiScanPayload getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WiFiScanPayload>(create);
   static WiFiScanPayload? _defaultInstance;
 
-  WiFiScanPayload_Payload whichPayload() => _WiFiScanPayload_PayloadByTag[$_whichOneof(0)];
+  WiFiScanPayload_Payload whichPayload() => _WiFiScanPayload_PayloadByTag[$_whichOneof(0)]!;
   void clearPayload() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -432,3 +636,6 @@ class WiFiScanPayload extends $pb.GeneratedMessage {
   RespScanResult ensureRespScanResult() => $_ensure(7);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
