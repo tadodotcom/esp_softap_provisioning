@@ -18,7 +18,7 @@ class TransportHTTP implements Transport{
 
   TransportHTTP(String hostname) {
     if (!isURL(hostname)) {
-      throw FormatException('hostname should be an URL.');
+      throw FormatException("hostname '$hostname' should be an URL.");
     }
     else {
       this.hostname = hostname;
