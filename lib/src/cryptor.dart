@@ -15,6 +15,6 @@ class Cryptor {
   Future<Uint8List> crypt (Uint8List data) async {
     return _channel.invokeMethod('crypt', {
       'data': data,
-    }) as Uint8List;
+    }).then((value) => value as Uint8List);
   }
 }
