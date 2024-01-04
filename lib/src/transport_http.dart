@@ -65,12 +65,14 @@ class TransportHTTP implements Transport{
           return body_bytes;
         }
         else {
-          print('Connection failed');
+          print("Connection failed: status ${response.statusCode} body ${response.body}");
           throw Exception("ESP Device doesn't repond");
         }
       }
     }
-    catch(e){
+    catch(e, s){
+      print('Connection error:  ' + e.toString());
+      print(s);
       throw StateError('Connection error ' + e.toString());
     }
     return Uint8List.fromList([]);

@@ -33,8 +33,9 @@ class Provisioning {
         }
         responseData = SessionData.fromBuffer(response);
       }
-    } catch (e) {
+    } catch (e, s) {
       print('EstablishSession error $e');
+      print(s);
       return false;
     }
   }
@@ -162,8 +163,9 @@ class Provisioning {
         }
       }
       return ret;
-    } catch (e) {
-      print('Error scan wifi $e');
+    } catch (e, s) {
+      print('Error scan wifi: $e');
+      print(s);
     }
     return null;
   }
