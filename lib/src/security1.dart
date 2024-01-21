@@ -55,7 +55,7 @@ class Security1 implements Security {
     return ret;
   }
 
-  Future<SessionData> securitySession(SessionData? responseData) async {
+  Future<SessionData?> securitySession(SessionData? responseData) async {
     if (sessionState == SecurityState.REQUEST1) {
       sessionState = SecurityState.RESPONSE1_REQUEST2;
       return await setup0Request();
@@ -67,7 +67,7 @@ class Security1 implements Security {
     }
     if (sessionState == SecurityState.RESPONSE2) {
       sessionState = SecurityState.FINISH;
-      return await setup1Response(responseData!) ?? SessionData();
+      return await setup1Response(responseData!);
     }
     return SessionData();
   }
