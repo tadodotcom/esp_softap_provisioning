@@ -63,7 +63,7 @@ class Security1 implements Security {
     if (sessionState == SecurityState.RESPONSE1_REQUEST2) {
       sessionState = SecurityState.RESPONSE2;
       await setup0Response(responseData!);
-      return await setup1Request(responseData!);
+      return await setup1Request(responseData);
     }
     if (sessionState == SecurityState.RESPONSE2) {
       sessionState = SecurityState.FINISH;

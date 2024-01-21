@@ -25,22 +25,20 @@ class ScanList extends StatelessWidget {
         ),
         title: Text(
           item['name'] ?? item['ssid'],
-          style: TextStyle(color: Theme.of(_context).accentColor),
+          style: TextStyle(color: Theme.of(_context).colorScheme.secondary),
         ),
         trailing: Text(item['rssi'].toString()),
         onTap: () {
           print('tap');
-          if (onTap != null) {
-            onTap(item, _context);
-          }
-        } //showModel(_context, bleDevice),
+          onTap(item, _context);
+                } //showModel(_context, bleDevice),
         );
   }
 
   Widget _buildList(BuildContext _context) {
     return Column(
       children: <Widget>[
-        this.disableLoading != null && this.disableLoading
+        this.disableLoading
             ? Container()
             : SizedBox(
                 child: Container(

@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:typed_data';
 import 'package:bloc/bloc.dart';
 import 'package:esp_softap_provisioning/esp_softap_provisioning.dart';
-import 'package:esp_softap_provisioning/src/connection_models.dart';
 import 'package:logger/logger.dart';
 import '../softap_service.dart';
 import './wifi.dart';
@@ -62,8 +61,8 @@ class WiFiBlocSoftAP extends Bloc<WifiEvent, WifiState> {
     List<int> customData = utf8.encode("Some CUSTOM data\0");
     Uint8List customBytes = Uint8List.fromList(customData);
     await prov.sendReceiveCustomData(customBytes);
-    await prov?.sendWifiConfig(ssid: event.ssid, password: event.password);
-    await prov?.applyWifiConfig();
+    await prov.sendWifiConfig(ssid: event.ssid, password: event.password);
+    await prov.applyWifiConfig();
     await Future.delayed(Duration(seconds: 10));
     var connectionStatus = await prov.getStatus();
 
@@ -88,7 +87,7 @@ class WiFiBlocSoftAP extends Bloc<WifiEvent, WifiState> {
 
   @override
   Future<void> close() {
-    prov?.dispose();
+    prov.dispose();
     return super.close();
   }
 }

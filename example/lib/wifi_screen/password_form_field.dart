@@ -41,7 +41,7 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
                   });
                 },
                 child: Icon(isObscureText ? Icons.remove_red_eye : Icons.lock_outline,
-                    color: Theme.of(context).accentColor)),
+                    color: Theme.of(context).colorScheme.secondary)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: BorderSide(

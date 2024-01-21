@@ -1,12 +1,7 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:typed_data';
-import 'dart:typed_data';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'transport.dart';
-import 'dart:io';
-import 'dart:convert' as convert;
 import 'package:string_validator/string_validator.dart';
 
 class TransportHTTP implements Transport{
@@ -56,8 +51,8 @@ class TransportHTTP implements Transport{
         if (response.statusCode == 200) {
           print('Connection successful');
           //client.close();
-          final Uint8List body_bytes = response.bodyBytes;
-          return body_bytes;
+          final Uint8List bodyBytes = response.bodyBytes;
+          return bodyBytes;
         }
         else {
           print("Connection failed: status ${response.statusCode} body ${response.body}");

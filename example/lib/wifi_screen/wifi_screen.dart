@@ -80,7 +80,7 @@ class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
       statusWidget = Expanded(child: _statusWidget[step]);
       body = Expanded(
           child:
-          SpinKitDoubleBounce(color: Theme.of(context).accentColor));
+          SpinKitDoubleBounce(color: Theme.of(context).colorScheme.secondary));
     } else {
       body = wifiList;
     }
@@ -89,7 +89,7 @@ class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
         Center(
             child: Text(
               'Select Wifi network',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             )),
         body,
         statusWidget ?? Container(),
@@ -109,7 +109,7 @@ class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
         backgroundColor: Colors.transparent,
         title: Text(
           'Provisioning...',
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),
       body: BlocProvider(
@@ -135,7 +135,7 @@ class _WiFiScreenSoftAPState extends State<WiFiScreenSoftAP> {
                       size: 20,
                     ),
                     Text('Provisioning',
-                        style: Theme.of(context).textTheme.bodyText1),
+                        style: Theme.of(context).textTheme.bodyLarge),
                   ],
                 ),
               );

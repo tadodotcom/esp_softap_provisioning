@@ -41,7 +41,7 @@ class _WifiDialogState extends State<WifiDialog> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text('Password for WiFi',
-                    style: Theme.of(context).textTheme.bodyText2),
+                    style: Theme.of(context).textTheme.bodyMedium),
                 SizedBox(
                   height: 10.0,
                 ),
@@ -54,7 +54,7 @@ class _WifiDialogState extends State<WifiDialog> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
                             borderSide: BorderSide(
-                              color: Theme.of(context).accentColor,
+                              color: Theme.of(context).colorScheme.secondary,
                               width: 1,
                             )))),
                 SizedBox(
@@ -78,10 +78,8 @@ class _WifiDialogState extends State<WifiDialog> {
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
                           _formKey.currentState.save();
-                          if (widget.onSubmit != null) {
-                            widget.onSubmit(ssid, password);
-                          }
-                          Navigator.of(context).pop();
+                          widget.onSubmit(ssid, password);
+                                                  Navigator.of(context).pop();
                         }
                       }),
                 )

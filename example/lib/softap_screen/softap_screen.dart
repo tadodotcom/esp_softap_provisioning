@@ -73,7 +73,7 @@ class _SoftApScreenState extends State<SoftApScreen> {
                         'Ready',
                         style: Theme.of(context)
                             .textTheme
-                            .headline6
+                            .titleLarge
                             .copyWith(color: Colors.white),
                       ),
 
