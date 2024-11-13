@@ -1,3 +1,9 @@
+🚨🚨🚨 WARNING 🚨🚨🚨
+
+**DO NOT LINK YOUR FLUTTER PROJECT DIRECTLY TO THIS REPOSITORY**
+
+**IT WILL GO DOWN AS SOON AS THE ORIGINAL REPO IMPLEMENTS THESE CHANGES**
+
 # esp_softap_provisioning
 
 A Flutter plugin for provisioning ESP32 modules with SoftAP
