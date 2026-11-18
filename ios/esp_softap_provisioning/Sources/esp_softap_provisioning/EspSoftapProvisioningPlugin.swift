@@ -1,11 +1,11 @@
 import Flutter
 import UIKit
 
-public class SwiftEspSoftapProvisioningPlugin: NSObject, FlutterPlugin {
+public class EspSoftapProvisioningPlugin: NSObject, FlutterPlugin {
   private var cryptoAES: CryptoAES?
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "esp_softap_provisioning", binaryMessenger: registrar.messenger())
-    let instance = SwiftEspSoftapProvisioningPlugin()
+    let instance = EspSoftapProvisioningPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
