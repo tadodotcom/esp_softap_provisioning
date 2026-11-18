@@ -4,18 +4,18 @@ version: 1.0.1
 homepage: https://github.com/omert08/esp_softap_provisioning
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
-  flutter: ">=3.19.6"
+  sdk: '>=3.4.0 <4.0.0'
+  flutter: ">=3.44.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  protobuf: 
-  cryptography: 
-  logger: 
-  string_validator: 
-  http: 
-  collection: 
+  protobuf: ^2.1.0
+  cryptography: ^2.7.0
+  logger: ^1.4.0
+  string_validator: ^0.3.0
+  http: ^1.6.0
+  collection: ^1.19.1
 
 dev_dependencies:
   flutter_test:
